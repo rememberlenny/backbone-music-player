@@ -4,13 +4,14 @@
 
   window.AlbumView = Backbone.View.extend({
 
-    intialize: function(){
-      this.template = _.template($('#album-template'.html()));
+    initialize: function() {
+      this.template = _.template($('#album-template').html());
     },
 
-    render: function(){
-      var renderedContent = this.template(this.model.toJSON());
-      $(this.el).html(renderedContent);
+    render: function() {
+      var renderedContent = this.template(this.model.toJSON()); //Combine template and data
+      $(this.el).html(renderedContent); //Append to the DOM
+      return this; //Return 'this'
     }
 
   });
